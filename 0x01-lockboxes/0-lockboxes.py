@@ -18,7 +18,7 @@ def canUnlockAll(boxes):
                 allKeys.append(key)
         numBefore += 1
 
-    print(set(allKeys))
+    allKeys = list(set(allKeys))
     boxNum = 0
 
     for box in boxes:
