@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """given a number of boxes, write a program to check if all boxes can be opened
 """
 
