@@ -2,6 +2,7 @@
 """given a number of boxes, write a program to check if all boxes can be opened
 """
 
+
 def canUnlockAll(boxes):
     """check if all boxes can be opened"""
     boxState = []
@@ -20,12 +21,12 @@ def canUnlockAll(boxes):
     boxNum = 0
     boxState[boxNum] = True
     for box in boxes:
-        if boxState[boxNum] == True:
+        if boxState[boxNum] is True:
             for key in box:
                 if key < len(boxes):
                     boxState[key] = True
         boxNum += 1
     for box in boxState:
-        if box == [False]:
+        if box is False:
             return False
     return True
