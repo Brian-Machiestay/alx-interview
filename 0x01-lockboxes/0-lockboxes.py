@@ -7,21 +7,22 @@ def canUnlockAll(boxes):
     """check if all boxes can be opened"""
     boxState = []
     for i in range(len(boxes)):
-        for box in boxes:
-            for key in box:
-                if key == i:
-                    boxState.append(True)
-                    break
-            if len(boxState) == i + 1:
-                break
-        if len(boxState) == i + 1:
-            continue
         boxState.append(False)
 
-    boxNum = 0
-    boxState[boxNum] = True
+    numBefore = 0
+    boxState[numBefore] = True
+    allKeys = [0]
     for box in boxes:
-        if boxState[boxNum] is True:
+        if boxes.index(box) in allKeys:
+            for key in box:
+                allKeys.append(key)
+        numBefore += 1
+
+    print(set(allKeys))
+    boxNum = 0
+
+    for box in boxes:
+        if boxNum in allKeys:
             for key in box:
                 if key < len(boxes):
                     boxState[key] = True
