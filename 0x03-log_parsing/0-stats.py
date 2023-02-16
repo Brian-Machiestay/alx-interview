@@ -57,7 +57,6 @@ if __name__ == "__main__":
             valid = validate_input(line.rstrip())
             if not valid:
                 continue
-            line_number += 1
             totalsize += get_file_size(line)
             status = get_status(line)
             if status in stat.keys():
@@ -65,5 +64,6 @@ if __name__ == "__main__":
             if line_number == 10:
                 print_info(totalsize, stat)
                 line_number = 0
+            line_number += 1
     except KeyboardInterrupt:
         print_info(totalsize, stat)
