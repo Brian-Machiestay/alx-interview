@@ -11,6 +11,8 @@ def makeChange(coins, total):
     minCoins = 0
 
     for coin in allcoins:
+        if total is <= 0:
+            return 0
         if coin <= left and left % coin == 0:
             minCoins = minCoins + left // coin
             left = 0
