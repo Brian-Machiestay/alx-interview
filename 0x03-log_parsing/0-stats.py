@@ -6,7 +6,6 @@ import re
 import sys
 
 
-
 def validate_input(line):
     """validate the line"""
     regx_addr = r'^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
