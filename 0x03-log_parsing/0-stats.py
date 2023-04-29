@@ -6,6 +6,7 @@ import re
 import sys
 
 
+
 def validate_input(line):
     """validate the line"""
     regx_addr = r'^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
@@ -65,5 +66,7 @@ if __name__ == "__main__":
                 print_info(totalsize, stat)
                 line_number = 0
             line_number += 1
+        if not sys.stdin.isatty():
+            print_info(totalsize, stat)
     except KeyboardInterrupt:
         print_info(totalsize, stat)
