@@ -62,7 +62,7 @@ if __name__ == "__main__":
             if status in stat.keys():
                 stat[status] += 1
             line_number += 1
-            if line_number == 10:
+            if line_number == 11:
                 print_info(totalsize, stat)
         if not sys.stdin.isatty():
             print_info(totalsize, stat)
