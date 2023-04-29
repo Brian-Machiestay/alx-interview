@@ -48,7 +48,7 @@ def print_info(size, stat):
 
 
 if __name__ == "__main__":
-    line_number = 0
+    line_number = 1
     stat = {"200": 0, "301": 0, "400": 0,
             "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
     totalsize = 0
@@ -61,9 +61,8 @@ if __name__ == "__main__":
             status = get_status(line)
             if status in stat.keys():
                 stat[status] += 1
-                line_number = 0
             line_number += 1
-            if line_number == 9:
+            if line_number == 10:
                 print_info(totalsize, stat)
         if not sys.stdin.isatty():
             print_info(totalsize, stat)
