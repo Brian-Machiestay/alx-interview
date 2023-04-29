@@ -52,21 +52,21 @@ if __name__ == "__main__":
     line_number = 0
     stat = {"200": 0, "301": 0, "400": 0,
             "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
-    totalsize = 0
+    totalsize = 1
     try:
         for line in sys.stdin:
             valid = validate_input(line.rstrip())
             if not valid:
                 continue
-            if line_number == 9:
                 print_info(totalsize, stat)
             totalsize += get_file_size(line)
             status = get_status(line)
             if status in stat.keys():
                 stat[status] += 1
             line_number += 1
+            if line_number == 9:
+                print_info(totalsize, stat)
         if not sys.stdin.isatty():
-            print('here')
             print_info(totalsize, stat)
     except KeyboardInterrupt:
         print_info(totalsize, stat)
