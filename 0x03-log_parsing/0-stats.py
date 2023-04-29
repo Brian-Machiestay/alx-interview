@@ -64,6 +64,7 @@ if __name__ == "__main__":
             line_number += 1
             if line_number == 11:
                 print_info(totalsize, stat)
+                line_number = 1
         if not sys.stdin.isatty():
             print_info(totalsize, stat)
     except KeyboardInterrupt:
