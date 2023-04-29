@@ -63,6 +63,7 @@ if __name__ == "__main__":
             status = get_status(line)
             if status in stat.keys():
                 stat[status] += 1
+                line_number = 0
             line_number += 1
             if line_number == 9:
                 print_info(totalsize, stat)
